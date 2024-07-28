@@ -14,7 +14,7 @@ def restructure_word(word, arr):
     while i < len(word):
         if word[i].isdecimal():
             count = int(word[i])
-            for n in range(count):
+            for _ in range(count):
                 arr.pop()
     # 이외의 경우라면 arr에서 해당 문자열을 제거한다.
         else:

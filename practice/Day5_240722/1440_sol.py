@@ -15,6 +15,6 @@ print('방법 2')
 reverse = "Hello, World!"
 reverse_string_2 = ''
 for i in reverse:
-    reverse_string_2 = i + reverse_string_2
+    reverse_string_2 = i + reverse_string_2 # i를 앞에다가 붙임
 
 print(reverse_string_2)
