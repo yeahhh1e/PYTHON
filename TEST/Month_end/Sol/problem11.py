@@ -3,24 +3,23 @@
 def max_adjacent_sum(matrix):
     pass
     # 여기에 코드를 작성하여 함수를 완성합니다.
-    i = 0
-    n = 0
+    max_num = -999999
     # matrix를 순회하며 초기 설정 값 max 보다 크면 max 값을 해당 값으로 바꾼다
     for i in range(len(matrix)):
-        for n in range(len(matrix[i])):
+        for j in range(len(matrix)):
+            # 해당 값 주변과 더한 총 합 total
             total = 0
-            a = matrix[i][n]
-            if matrix[i-1][n] > 0:
-               b = matrix[i-1][n]
-            if matrix[i+1][n] > 0:
-                c = matrix[i+1][n]
-            if matrix[i][n+1] > 0:
-                d = matrix[i][n+1]
-            e = matrix[i][n-1]
-            print(a,b,c,d,e)
-    #         if total < new_total:
-    #             total = new_total
-    # return new_total
+            # 상하좌우 인덱스 순회
+            for x, y in ((i, j), (i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)):
+                # 인덱스의 값이 0보다 크고 매트릭스의 크기보다 작아야 오류가 발생하지 않음
+                if 0 <= x < len(matrix) and 0 <= y < len(matrix):
+                    total += matrix[x][y]
+                
+            if max_num < total:
+                max_num = total
+    
+    return max_num
+    
 # 추가 테스트를 위한 코드 작성 가능
 # 예) print(함수명(인자))
 
