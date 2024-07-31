@@ -4,9 +4,10 @@
 def reverse_string(s):
     pass
     # 여기에 코드를 작성하여 함수를 완성합니다.
-    for char in s:
-        a = reverse_string(s) + char 
-        return a
+    if len(s) == 1:
+        return s
+    else:
+        return s[-1] + reverse_string(s[:-1])
 
 # 추가 테스트를 위한 코드 작성 가능
 # 예) print(함수명(인자))
