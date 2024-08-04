@@ -6,13 +6,13 @@ def max_adjacent_sum(matrix):
     max_num = -999999
     # matrix를 순회하며 초기 설정 값 max 보다 크면 max 값을 해당 값으로 바꾼다
     for i in range(len(matrix)):
-        for j in range(len(matrix)):
+        for j in range(len(matrix[0])): # matrix[0] 으로 열의 수로 해줘야 런타임 오류 나지 않음
             # 해당 값 주변과 더한 총 합 total
             total = 0
             # 상하좌우 인덱스 순회
             for x, y in ((i, j), (i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)): # 튜플이 아닌 리스트로 해도 동일한 결과
                 # 인덱스의 값이 0보다 크고 매트릭스의 크기보다 작아야 오류가 발생하지 않음
-                if 0 <= x < len(matrix) and 0 <= y < len(matrix):
+                if 0 <= x < len(matrix) and 0 <= y < len(matrix[0]): 
                     total += matrix[x][y]
                 
             if max_num < total:

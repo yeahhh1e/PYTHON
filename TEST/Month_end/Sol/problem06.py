@@ -3,16 +3,19 @@
 # 내장함수 len 함수를 사용하지 않습니다.
 def longest_string(str_list):
     pass
-    # # 여기에 코드를 작성하여 함수를 완성합니다.
-    # count = 0
-    # for i in str_list:
-    #     lst = []
-    #     for _ in i:
-    #         count += 1
-    #         lst.append(count)
-    # return lst
-
-    # for i in rang
+    # 여기에 코드를 작성하여 함수를 완성합니다.
+    str_num = []
+    for str in str_list:
+        count = 0
+        for _ in str:
+            count += 1
+        str_num.append(count)
+    sorted_str_num = sorted(str_num)
+    longest_num = sorted_str_num[-1]
+    location = str_num.index(longest_num)
+    return str_list[location]
+    
+    
 
 
 # 추가 테스트를 위한 코드 작성 가능
